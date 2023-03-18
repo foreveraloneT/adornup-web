@@ -5,9 +5,12 @@ import Background from '../components/Background';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
-    <main>
+    <>
+      <main>
+        <h1>Hello world</h1>
+      </main>
       <Background />
-    </main>
+    </>
   );
 };
 
