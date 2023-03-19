@@ -27,51 +27,46 @@ const PureHeader: React.FC<PureHeaderProps> = ({
   onOpenMobileMenu,
   onCloseMobileMenu,
 }) => (
-  <>
-    <header
-      className={classNames(
-        'fixed w-full top-0 left-0 h-[50px] lg:h-[100px] overflow-y-hidden bg-white z-10',
-        'transition-height ease-in-out shadow-[2px_5px_30px_rgba(159,159,159,0.2)]',
-        {
-          'h-screen': showMobileMenu,
-        },
-      )}
-    >
-      <nav className="h-[50px] lg:h-[100px] px-4 lg:px-28 flex justify-between items-center" >
-        <Link to="/">
-          <Logo />
-        </Link>
-        <div className='hidden lg:flex lg:gap-4 text-grey-icon'>
-          <a href={`mailto:${email}`}><EmailIcon className="cursor-pointer" /></a>
-          <a href={`tel:${whatsapp}`}><WhatappsIcon className="cursor-pointer" /></a>
-          <a href={`tel:${tel}`}><PhoneIcon className="cursor-pointer" /></a>
-        </div>
-        <div className='lg:hidden'>
-          {
-            showMobileMenu
-              ? (
-              <CloseIcon
-                className="cursor-pointer"
-                onClick={onCloseMobileMenu}
-              />
-                )
-              : (
-              <HamburgerIcon
-                className="cursor-pointer"
-                onClick={onOpenMobileMenu}
-              />
-                )
-          }
-        </div>
-      </nav>
-      <div className='lg:hidden mt-[145px]'>
-        <Contacts />
+  <header
+    className={classNames(
+      'fixed w-full top-0 left-0 h-[50px] lg:h-[100px] overflow-y-hidden bg-white z-10',
+      'transition-height ease-in-out shadow-normal',
+      {
+        'h-screen': showMobileMenu,
+      },
+    )}
+  >
+    <nav className="h-[50px] lg:h-[100px] px-4 lg:px-28 flex justify-between items-center" >
+      <Link to="/">
+        <Logo />
+      </Link>
+      <div className='hidden lg:flex lg:gap-4 text-grey-icon'>
+        <a href={`mailto:${email}`}><EmailIcon className="cursor-pointer" /></a>
+        <a href={`tel:${whatsapp}`}><WhatappsIcon className="cursor-pointer" /></a>
+        <a href={`tel:${tel}`}><PhoneIcon className="cursor-pointer" /></a>
       </div>
-    </header>
-
-    {/* spacing for header */}
-    <div className="h-[50px] lg:h-[100px]" />
-  </>
+      <div className='lg:hidden'>
+        {
+          showMobileMenu
+            ? (
+            <CloseIcon
+              className="cursor-pointer"
+              onClick={onCloseMobileMenu}
+            />
+              )
+            : (
+            <HamburgerIcon
+              className="cursor-pointer"
+              onClick={onOpenMobileMenu}
+            />
+              )
+        }
+      </div>
+    </nav>
+    <div className='lg:hidden mt-[145px]'>
+      <Contacts />
+    </div>
+  </header>
 );
 
 PureHeader.defaultProps = {

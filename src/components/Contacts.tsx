@@ -13,7 +13,7 @@ interface PureContactsProps {
 }
 
 const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp }) => (
-  <div className="flex flex-col lg:flex-row gap-6 text-grey-icon font-sans">
+  <div className="flex flex-col lg:flex-row gap-6 text-grey-icon font-sans font-medium text-sm lg:text-lg">
     <a href={`mailto:${email}`}>
       <div className="flex gap-2 justify-center uppercase">
         <EmailIcon />

@@ -13,7 +13,8 @@ module.exports = {
       gold: '#C7AB79',
       green: '#37754D',
       'grey-icon': '#585858',
-      'grey-hover': '#D5D5D5',
+      'grey-hover': '#5D5D5D',
+      'grey-disabled': '#D5D5D5',
       'grey-text1': '#757575',
       'grey-text2': '#A6A4A4',
       'grey-bg': '#414141',
@@ -30,7 +31,18 @@ module.exports = {
       },
       transitionProperty: {
         height: 'height'
-      }
+      },
+      fontSize: {
+        '1.5xl': '1.375rem',
+        '3.5xl': '2rem',
+        '6.5xl': '4rem',
+      },
+      borderRadius: {
+        '4xl': '1.875rem',
+      },
+      boxShadow: {
+        normal: '2px 5px 30px rgba(159, 159, 159, 0.2)',
+      },
     },
   },
   plugins: [],
