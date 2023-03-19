@@ -3,11 +3,13 @@ import type { HeadFC, PageProps } from 'gatsby';
 
 import Background from '../components/Background';
 import Seo from '../components/Seo';
+import Header from '../components/Header';
 
 const IndexPage: React.FC<PageProps> = () => {
   return (
     <>
       <main>
+        <Header />
         <h1>Hello world</h1>
       </main>
       <Background />

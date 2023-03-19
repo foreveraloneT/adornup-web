@@ -5,7 +5,33 @@ module.exports = {
     "./src/components/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
-    extend: {},
+    colors: {
+      transparent: 'transparent',
+      current: 'currentColor',
+      black: '#000000',
+      white: '#FFFFFF',
+      gold: '#C7AB79',
+      green: '#37754D',
+      'grey-icon': '#585858',
+      'grey-hover': '#D5D5D5',
+      'grey-text1': '#757575',
+      'grey-text2': '#A6A4A4',
+      'grey-bg': '#414141',
+    },
+    extend: {
+      width: {
+        15: '3.75rem',
+      },
+      height: {
+        15: '3.75rem',
+      },
+      fontFamily: {
+        quattrocento: 'Quattrocento, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',
+      },
+      transitionProperty: {
+        height: 'height'
+      }
+    },
   },
   plugins: [],
 }
