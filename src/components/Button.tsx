@@ -6,10 +6,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
-  compact,
-  type,
+  compact = false,
+  type = 'button',
   children,
-  className,
+  className = '',
+  disabled = false,
   ...props
 }) => (
   <button
@@ -26,12 +27,5 @@ const Button: React.FC<React.PropsWithChildren<ButtonProps>> = ({
     {children}
   </button>
 );
-
-Button.defaultProps = {
-  compact: false,
-  disabled: false,
-  type: 'button',
-  className: '',
-};
 
 export default Button;

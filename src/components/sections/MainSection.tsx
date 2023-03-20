@@ -9,7 +9,7 @@ interface MouseSymbolProps {
   onClick?: (e: React.MouseEvent<HTMLDivElement>) => void
 }
 
-const MouseSymbol: React.FC<MouseSymbolProps> = ({ className, onClick }) => (
+const MouseSymbol: React.FC<MouseSymbolProps> = ({ className = '', onClick }) => (
   <div
     className={classNames(
       'w-fit flex flex-col gap-2 items-center text-white lg:hover:text-grey-hover active:text-grey-hover cursor-pointer select-none',
@@ -25,10 +25,6 @@ const MouseSymbol: React.FC<MouseSymbolProps> = ({ className, onClick }) => (
     </div>
   </div>
 );
-
-MouseSymbol.defaultProps = {
-  className: '',
-};
 
 interface MainSectionProps {
   onClickScroll?: () => void

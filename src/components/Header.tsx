@@ -9,12 +9,14 @@ import WhatappsIcon from '../icons/whatsapp.icon.svg';
 import PhoneIcon from '../icons/phone.icon.svg';
 import HamburgerIcon from '../icons/hamburger.icon.svg';
 import CloseIcon from '../icons/close.icon.svg';
+import { useWindowScroll } from '../hooks/scroll';
 
 interface PureHeaderProps {
   email: string
   tel: string
   whatsapp: string
-  showMobileMenu: boolean
+  showMobileMenu?: boolean
+  hide?: boolean
   onOpenMobileMenu: () => void
   onCloseMobileMenu: () => void
 }
@@ -23,16 +25,18 @@ const PureHeader: React.FC<PureHeaderProps> = ({
   email,
   tel,
   whatsapp,
-  showMobileMenu,
+  showMobileMenu = false,
+  hide = false,
   onOpenMobileMenu,
   onCloseMobileMenu,
 }) => (
   <header
     className={classNames(
-      'fixed w-full top-0 left-0 h-[50px] lg:h-[100px] overflow-y-hidden bg-white z-10',
-      'transition-height ease-in-out shadow-normal',
+      'fixed w-full top-0 left-0 h-[50px] lg:h-[100px] overflow-y-hidden bg-white z-10 hide',
+      'transition-all ease-in-out shadow-normal',
       {
         'h-screen': showMobileMenu,
+        '-translate-y-full': hide,
       },
     )}
   >
@@ -69,10 +73,6 @@ const PureHeader: React.FC<PureHeaderProps> = ({
   </header>
 );
 
-PureHeader.defaultProps = {
-  showMobileMenu: false,
-};
-
 const Header: React.FC = () => {
   const { site: { siteMetadata: { email, tel, whatsapp } } } = useStaticQuery(graphql`
     query {
@@ -87,6 +87,15 @@ const Header: React.FC = () => {
   `);
 
   const [showMobileMenu, setShowMobileMenu] = React.useState(false);
+  const [hide, setHide] = React.useState(false);
+
+  useWindowScroll(({ scrollY, prevScrollY }) => {
+    if (!showMobileMenu && scrollY > prevScrollY) {
+      setHide(true);
+    } else if (scrollY < prevScrollY) {
+      setHide(false);
+    }
+  });
 
   return (
     <PureHeader
@@ -94,6 +103,7 @@ const Header: React.FC = () => {
       tel={tel}
       whatsapp={whatsapp}
       showMobileMenu={showMobileMenu}
+      hide={hide}
       onOpenMobileMenu={() => { setShowMobileMenu(true); }}
       onCloseMobileMenu={() => { setShowMobileMenu(false); }}
     />

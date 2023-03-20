@@ -10,9 +10,9 @@ interface InfoCardProps {
 }
 
 const InfoCard: React.FC<InfoCardProps> = ({ title, content, Graphic }) => (
-  <div className='flex flex-col items-center w-fit pt-6 lg:flex-1 max-w-[300px]'>
+  <div className='flex flex-col items-center w-fit pt-6 lg:flex-1 lg:max-w-[300px]'>
     <Graphic className="mb-6" />
-    <h2 className='text-lg text-black font-medium font-sans uppercase mb-2'>{title}</h2>
+    <h2 className='text-lg text-black font-medium font-sans uppercase mb-2 whitespace-nowrap'>{title}</h2>
     <p className='text-sm text-grey-text1 font-normal font-quattrocento text-justify'>{content}</p>
   </div>
 );
