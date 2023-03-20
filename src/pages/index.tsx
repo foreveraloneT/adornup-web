@@ -6,12 +6,15 @@ import InfoSection from '../components/sections/InfoSection';
 import Background from '../components/Background';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
+import { useCalculateHeightScreen } from '../hooks/screen';
 
 const IndexPage: React.FC<PageProps> = () => {
+  useCalculateHeightScreen();
+
   const infoSectionElm = React.useRef<HTMLElement>(null);
 
   const scrollToInfo = React.useCallback(() => {
-    infoSectionElm.current?.scrollIntoView({ behavior: 'smooth' });
+    infoSectionElm.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }, []);
 
   return (
@@ -20,7 +23,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <Header />
         <MainSection onClickScroll={scrollToInfo} />
         <InfoSection ref={infoSectionElm} />
-        <div className="h-[3000px] bg-white" />
+        <div className="h-[3000px] bg-gold" />
       </main>
       <Background />
     </>

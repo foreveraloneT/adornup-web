@@ -20,10 +20,8 @@ module.exports = {
       'grey-bg': '#414141',
     },
     extend: {
-      width: {
-        15: '3.75rem',
-      },
-      height: {
+      spacing: {
+        13: '3.25rem',
         15: '3.75rem',
       },
       fontFamily: {

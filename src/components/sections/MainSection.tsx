@@ -12,7 +12,7 @@ interface MouseSymbolProps {
 const MouseSymbol: React.FC<MouseSymbolProps> = ({ className, onClick }) => (
   <div
     className={classNames(
-      'w-fit flex flex-col gap-2 items-center text-white hover:text-grey-hover cursor-pointer select-none',
+      'w-fit flex flex-col gap-2 items-center text-white lg:hover:text-grey-hover active:text-grey-hover cursor-pointer select-none',
       className,
     )}
     onClick={onClick}
@@ -20,7 +20,7 @@ const MouseSymbol: React.FC<MouseSymbolProps> = ({ className, onClick }) => (
     <MouseIcon
       className="w-7 h-10"
     />
-    <div className="uppercase font-sans font-normal text-base lg:text-xl">
+    <div className="uppercase font-sans font-medium text-base lg:text-xl">
       scroll
     </div>
   </div>
@@ -47,16 +47,16 @@ const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContact
     >
       Adornup
     </h1>
-    <h2
+    <p
       className='font-sans uppercase font-medium text-sm lg:text-1.5xl mt-2'
       style={{
         lineHeight: '1.1',
       }}
     >
       Transforming your vision into exquisite jewelry creations
-    </h2>
+    </p>
     <div className="bg-gold w-[120px] h-px my-6" />
-    <p className='lg:w-1/2 font-quattrocento text-grey-text1 text-sm lg:text-lg'>
+    <p className='md:w-3/5 lg:max-w-[632px] font-quattrocento text-grey-text1 text-sm lg:text-lg'>
       ADORNUP offers end-to-end services for all types of jewellery businesses especially for startups. This starts from CAD designing to finished products. We specialises in helping small customers who prefer to start with small quantity orders or have unique designs that require special craftsmanship. We provide full support and professional service to assist our client to fulfil their inventory.
     </p>
     <Button
@@ -66,7 +66,7 @@ const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContact
       Contact us
     </Button>
     <MouseSymbol
-      className='absolute bottom-6 lg:bottom-24 left-0 right-0 mx-auto'
+      className='absolute bottom-6 left-0 right-0 mx-auto'
       onClick={onClickScroll}
     />
   </section>
