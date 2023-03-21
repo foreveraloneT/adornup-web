@@ -5,8 +5,8 @@ const config: GatsbyConfig = {
     title: 'Adornup',
     siteUrl: 'https://www.adornup.co',
     email: 'info@adornup.co',
-    tel: '+66932434242',
-    whatsapp: '+66932434242',
+    tel: '+6620129514',
+    whatsapp: '+6620129514',
     address: '1233 Charoen Krung Road, Suriyawong, Bang Rak, Bangkok 10500',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.

@@ -33,10 +33,10 @@ interface MainSectionProps {
 
 const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContactUs }) => (
   <section
-    className='h-screen pt-[50px] lg:pt-[100px] px-4 lg:px-28 flex flex-col justify-center relative'
+    className='h-screen pt-[50px] lg:pt-[100px] px-4 lg:px-28 flex flex-col relative md:justify-center'
   >
     <h1
-      className='font-quattrocento uppercase font-bold text-3.5xl lg:text-6.5xl'
+      className='font-quattrocento uppercase font-bold text-3.5xl lg:text-6.5xl mt-[20%] md:mt-0'
       style={{
         lineHeight: '1.1',
       }}
@@ -51,8 +51,8 @@ const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContact
     >
       Transforming your vision into exquisite jewelry creations
     </p>
-    <div className="bg-gold w-[120px] h-px my-6" />
-    <p className='md:w-3/5 lg:max-w-[632px] font-quattrocento text-grey-text1 text-sm lg:text-lg'>
+    <div className="bg-gold w-15 lg:w-[120px] h-px my-6" />
+    <p className='md:w-3/5 lg:max-w-[632px] font-quattrocento font-normal text-grey-text1 text-base lg:text-lg'>
       ADORNUP offers end-to-end services for all types of jewellery businesses especially for startups. This starts from CAD designing to finished products. We specialises in helping small customers who prefer to start with small quantity orders or have unique designs that require special craftsmanship. We provide full support and professional service to assist our client to fulfil their inventory.
     </p>
     <Button

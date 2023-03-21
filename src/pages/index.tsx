@@ -3,6 +3,7 @@ import type { HeadFC, PageProps } from 'gatsby';
 
 import MainSection from '../components/sections/MainSection';
 import InfoSection from '../components/sections/InfoSection';
+import TeamSection from '../components/sections/TeamSection';
 import Background from '../components/Background';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
@@ -24,7 +25,8 @@ const IndexPage: React.FC<PageProps> = () => {
         <Header />
         <MainSection onClickScroll={scrollToInfo} />
         <InfoSection ref={infoSectionElm} />
-        <div className="h-[3000px] bg-gold" />
+        <TeamSection />
+        <div className="h-[1000px] bg-gold" />
         <Footer />
       </main>
       <Background />

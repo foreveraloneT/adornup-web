@@ -33,6 +33,7 @@ module.exports = {
       },
       fontSize: {
         '1.5xl': '1.375rem',
+        '2.5xl': '1.625rem',
         '3.5xl': '2rem',
         '6.5xl': '4rem',
       },
