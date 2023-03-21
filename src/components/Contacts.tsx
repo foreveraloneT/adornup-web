@@ -1,4 +1,5 @@
 import * as React from 'react';
+import classNames from 'classnames';
 
 import EmailIcon from '../icons/email.icon.svg';
 import WhatappsIcon from '../icons/whatsapp.icon.svg';
@@ -10,10 +11,19 @@ interface PureContactsProps {
   email: string
   tel: string
   whatsapp: string
+  className?: string
+  variant?: 'primary' | 'secondary'
 }
 
-const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp }) => (
-  <div className="flex flex-col lg:flex-row gap-6 text-grey-icon font-sans font-medium text-sm lg:text-lg">
+const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, className = '', variant = 'primary' }) => (
+  <div
+    className={classNames(
+      'flex flex-col lg:flex-row gap-6 text-grey-icon font-sans font-medium text-sm lg:text-lg',
+      {
+        'text-white': variant === 'secondary',
+      },
+      className,
+    )}>
     <a href={`mailto:${email}`}>
       <div className="flex gap-2 justify-center uppercase">
         <EmailIcon />
@@ -37,7 +47,9 @@ const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp }) => 
   </div>
 );
 
-const Contacts: React.FC = () => {
+type ContactProps = Pick<PureContactsProps, 'className' | 'variant'>;
+
+const Contacts: React.FC<ContactProps> = (props) => {
   const { site: { siteMetadata: { email, tel, whatsapp } } } = useStaticQuery(graphql`
     query {
       site {
@@ -55,6 +67,7 @@ const Contacts: React.FC = () => {
       email={email}
       tel={tel}
       whatsapp={whatsapp}
+      {...props}
     />
   );
 };

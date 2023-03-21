@@ -6,6 +6,7 @@ import InfoSection from '../components/sections/InfoSection';
 import Background from '../components/Background';
 import Seo from '../components/Seo';
 import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { useCalculateHeightScreen } from '../hooks/screen';
 
 const IndexPage: React.FC<PageProps> = () => {
@@ -24,6 +25,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <MainSection onClickScroll={scrollToInfo} />
         <InfoSection ref={infoSectionElm} />
         <div className="h-[3000px] bg-gold" />
+        <Footer />
       </main>
       <Background />
     </>

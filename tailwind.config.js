@@ -23,6 +23,7 @@ module.exports = {
       spacing: {
         13: '3.25rem',
         15: '3.75rem',
+        30: '7.5rem'
       },
       fontFamily: {
         quattrocento: 'Quattrocento, ui-serif, Georgia, Cambria, "Times New Roman", Times, serif',

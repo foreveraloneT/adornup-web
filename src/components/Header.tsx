@@ -36,7 +36,7 @@ const PureHeader: React.FC<PureHeaderProps> = ({
       'transition-all ease-in-out shadow-normal',
       {
         'h-screen': showMobileMenu,
-        '-translate-y-full': hide,
+        '-translate-y-full shadow-none': hide,
       },
     )}
   >

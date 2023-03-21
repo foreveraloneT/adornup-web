@@ -7,6 +7,7 @@ const config: GatsbyConfig = {
     email: 'info@adornup.co',
     tel: '+66932434242',
     whatsapp: '+66932434242',
+    address: '1233 Charoen Krung Road, Suriyawong, Bang Rak, Bangkok 10500',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
