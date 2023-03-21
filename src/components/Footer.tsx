@@ -18,7 +18,7 @@ const PureFooter: React.FC<PureFooterProps> = ({ address }) => (
         variant='secondary'
       />
     </Link>
-    <p className='uppercase font-sans text-xs lg:text-xl text-medium text-center text-white opacity-70'>
+    <p className='uppercase font-sans text-sm lg:text-xl text-medium text-center text-white opacity-70'>
       {address}
     </p>
     <div className="my-12 h-px w-30 bg-white/50" />

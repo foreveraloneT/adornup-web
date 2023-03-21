@@ -15,7 +15,7 @@ const Logo: React.FC<LogoProps> = ({ className = '', variant = 'primary' }) => (
     />
     <div
       className={classNames(
-        'text-base lg:text-4xl font-bold font-quattrocento uppercase text-black',
+        'text-lg lg:text-4xl font-bold font-quattrocento uppercase text-black',
         {
           'text-white': variant === 'secondary',
         },

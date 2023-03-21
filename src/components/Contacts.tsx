@@ -18,7 +18,7 @@ interface PureContactsProps {
 const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, className = '', variant = 'primary' }) => (
   <div
     className={classNames(
-      'flex flex-col lg:flex-row gap-6 text-grey-icon font-sans font-medium text-sm lg:text-lg',
+      'flex flex-col lg:flex-row gap-6 text-grey-icon font-sans font-medium text-base lg:text-lg',
       {
         'text-white': variant === 'secondary',
       },
