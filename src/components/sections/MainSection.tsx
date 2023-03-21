@@ -36,7 +36,7 @@ const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContact
     className='h-screen pt-[50px] lg:pt-[100px] px-4 lg:px-28 flex flex-col relative md:justify-center'
   >
     <h1
-      className='font-quattrocento uppercase font-bold text-3.5xl lg:text-6.5xl mt-[20%] md:mt-0'
+      className='font-quattrocento uppercase font-bold text-3.5xl lg:text-6.5xl mt-[15%] md:mt-0'
       style={{
         lineHeight: '1.1',
       }}
