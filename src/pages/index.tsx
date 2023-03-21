@@ -26,7 +26,7 @@ const IndexPage: React.FC<PageProps> = () => {
         <MainSection onClickScroll={scrollToInfo} />
         <InfoSection ref={infoSectionElm} />
         <TeamSection />
-        <div className="h-[1000px] bg-gold" />
+        <div className="h-[1000px] bg-white" />
         <Footer />
       </main>
       <Background />

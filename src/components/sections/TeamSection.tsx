@@ -1,10 +1,16 @@
 import * as React from 'react';
+import ImageSliderShow from '../ImageSlideShow';
 
 const TeamSection: React.FC = () => (
-  <section className='py-8 px-4 bg-grey-bg'>
-    <div>
+  <section className='w-full py-8 lg:py-20 px-4 lg:px-0 bg-grey-bg flex flex-col gap-4 lg:relative'>
+    <div className="lg:w-2/5">
+      <ImageSliderShow />
+    </div>
+
+    <div className="block lg:w-2/5 lg:absolute lg:right-[112px] lg:top-1/2 lg:-translate-y-1/2">
       <h2 className="uppercase font-medium text-2.5xl text-white">Our team</h2>
-      <div className="my-4 h-px w-15 bg-gold"/>
+
+      <div className="my-4 lg:mb-10 h-px w-15 lg:w-[120px] bg-gold"/>
 
       <h3 className='uppercase whitespace-nowrap font-medium text-lg text-white mb-2'>
         Cad designer
@@ -22,5 +28,15 @@ const TeamSection: React.FC = () => (
     </div>
   </section>
 );
+
+// const TeamSection: React.FC = () => {
+//   return (
+//     <div className='bg-green'>
+//       <div className='w-1/2'>
+//         <ImageSliderShow />
+//       </div>
+//     </div>
+//   );
+// };
 
 export default TeamSection;
