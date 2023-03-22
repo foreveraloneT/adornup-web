@@ -44,7 +44,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
 }) => {
   const shouldDisabledButton = React.useMemo<boolean>(() => {
     return [name, email, phone].some(value => value.length === 0);
-  }, [name, email]);
+  }, [name, email, phone]);
 
   // eslint-disable-next-line @typescript-eslint/ban-types
   const [countryData, setCountryData] = React.useState<CountryData | {}>({});
