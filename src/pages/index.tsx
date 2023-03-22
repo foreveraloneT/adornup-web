@@ -10,9 +10,11 @@ import Seo from '../components/Seo';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { useCalculateHeightScreen } from '../hooks/screen';
+import { useResetScrollOnReload } from '../hooks/scroll';
 
 const IndexPage: React.FC<PageProps> = () => {
   useCalculateHeightScreen();
+  useResetScrollOnReload();
 
   const infoSectionElm = React.useRef<HTMLElement>(null);
   const contactSectionElm = React.useRef<HTMLElement>(null);

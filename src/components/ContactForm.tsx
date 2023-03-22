@@ -1,6 +1,5 @@
 import * as React from 'react';
 import Button from './Button';
-import { navigate } from 'gatsby';
 
 import Input from './Input';
 import Textarea from './TextArea';
@@ -136,11 +135,7 @@ const ContactForm: React.FC = () => {
     setSubmitting(false);
 
     setTimeout(() => {
-      setName('');
-      setPhone('');
-      setEmail('');
-      setNote('');
-      void navigate('/');
+      window.location.reload();
     });
   };
 

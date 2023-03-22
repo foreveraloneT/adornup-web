@@ -29,3 +29,11 @@ export const useWindowScroll = (handler: (info: ScrollInfo) => void): void => {
     });
   }, [scrollY]);
 };
+
+export const useResetScrollOnReload = (): void => {
+  React.useEffect(() => {
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
+  }, []);
+};
