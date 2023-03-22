@@ -20,6 +20,7 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
   ...props
 }) => {
   return (
+    // NOTE: Use css from 'src/styles/phone-input.css'
     <BasePhoneInput
       containerClass={classNames(
         {
