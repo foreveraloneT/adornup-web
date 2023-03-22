@@ -80,6 +80,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
         value={name}
         disabled={disabled}
         full
+        max={200}
         onChange={onNameChange}
       />
       <PhoneInput
@@ -94,6 +95,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
         value={email}
         full
         disabled={disabled}
+        max={100}
         onChange={onEmailChange}
       />
       <Textarea
@@ -102,6 +104,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
         value={note}
         full
         disabled={disabled}
+        maxLength={3000}
         onChange={onNoteChange}
       />
       <Button
