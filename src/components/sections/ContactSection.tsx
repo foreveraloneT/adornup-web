@@ -1,6 +1,8 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 
+import ContactForm from '../ContactForm';
+
 interface ServiceItemProps {
   title: string
   detail: string
@@ -57,22 +59,11 @@ const ServiceList: React.FC = () => (
   </div>
 );
 
-interface PureContactSectionProps {
+interface ContactSectionProps {
   className?: string
-  // name: string
-  // email: string
-  // tel: string
-  // text: string
 }
 
-const PureContactSection = React.forwardRef<HTMLElement, PureContactSectionProps>(function PureContactSection (props, ref) {
-  // const {
-  //   name = '',
-  //   email = '',
-  //   tel = '',
-  //   text = '',
-  // } = props;
-
+const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(function PureContactSection (props, ref) {
   return (
     <section
       className='py-6 lg:py-20 px-4 lg:px-28 bg-white flex flex-col lg:flex-row gap-12 lg:gap-4 lg:justify-between'
@@ -91,16 +82,10 @@ const PureContactSection = React.forwardRef<HTMLElement, PureContactSectionProps
         <ServiceList />
       </div>
 
-      <div className='lg:flex-1'>
-        --space for form--
+      <div className='lg:flex-1 flex flex-col justify-start lg:justify-end'>
+        <ContactForm />
       </div>
     </section>
-  );
-});
-
-const ContactSection = React.forwardRef<HTMLElement>(function ContactSection (_, ref) {
-  return (
-    <PureContactSection ref={ref} />
   );
 });
 
