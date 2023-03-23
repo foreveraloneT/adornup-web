@@ -22,7 +22,7 @@ const InfoCard: React.FC<InfoCardProps> = ({ title, content, Graphic }) => (
 const InfoSection = React.forwardRef<HTMLElement>(function InfoSection (_, ref) {
   return (
     <section
-      className='bg-white px-4 lg:px-28 py-12 lg:pt-8 lg:pb-13 flex flex-col lg:flex-row gap-2 lg:gap-6 lg:justify-center'
+      className='bg-white px-4 md:px-[25%] lg:px-28 py-12 lg:pt-8 lg:pb-13 flex flex-col lg:flex-row gap-2 lg:gap-6 lg:justify-center'
       ref={ref}
     >
       <InfoCard
