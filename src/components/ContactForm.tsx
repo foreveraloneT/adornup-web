@@ -6,7 +6,9 @@ import Textarea from './TextArea';
 import PhoneInput, {
   type PhoneInputProps,
   type CountryData,
+  isCountryData,
 } from './PhoneInput';
+import { sendEmail } from '../apis/email';
 
 interface ContactFormData {
   name: string
@@ -22,7 +24,7 @@ interface PureContactFormProps {
   email?: string
   note?: string
   phone?: string
-  disabled?: boolean
+  submitting?: boolean
   onNameChange: React.ChangeEventHandler<HTMLInputElement>
   onEmailChange: React.ChangeEventHandler<HTMLInputElement>
   onNoteChange: React.ChangeEventHandler<HTMLTextAreaElement>
@@ -35,7 +37,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
   email = '',
   note = '',
   phone = '',
-  disabled = false,
+  submitting = false,
   onNameChange,
   onEmailChange,
   onNoteChange,
@@ -78,7 +80,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
       <Input
         placeholder='Enter your name*'
         value={name}
-        disabled={disabled}
+        disabled={submitting}
         full
         max={200}
         onChange={onNameChange}
@@ -86,7 +88,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
       <PhoneInput
         country="th"
         full
-        disabled={disabled}
+        disabled={submitting}
         onChange={onPhoneChangeHandler}
       />
       <Input
@@ -94,7 +96,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
         type="email"
         value={email}
         full
-        disabled={disabled}
+        disabled={submitting}
         max={100}
         onChange={onEmailChange}
       />
@@ -103,7 +105,7 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
         rows={8}
         value={note}
         full
-        disabled={disabled}
+        disabled={submitting}
         maxLength={3000}
         onChange={onNoteChange}
       />
@@ -111,9 +113,9 @@ const PureContactForm: React.FC<PureContactFormProps> = ({
         className='uppercase'
         type="submit"
         full
-        disabled={disabled || shouldDisabledButton}
+        disabled={submitting || shouldDisabledButton}
       >
-        Submit
+        { submitting ? 'Submitting...' : 'Submit' }
       </Button>
     </form>
   );
@@ -126,16 +128,27 @@ const ContactForm: React.FC = () => {
   const [phone, setPhone] = React.useState('');
   const [submitting, setSubmitting] = React.useState(false);
 
-  const sendEmail = async (data: ContactFormData): Promise<void> => {
-    console.log('data', data);
+  const onSubmitHandler = async (data: ContactFormData): Promise<void> => {
     setSubmitting(true);
 
-    // NOTE: stub calling the API
-    await new Promise<void>((resolve) => {
-      setTimeout(() => { resolve(); }, 500);
-    });
+    const countryCode = isCountryData(data.countryData) ? data.countryData.countryCode : '';
+    const countryName = isCountryData(data.countryData) ? data.countryData.name : '';
 
-    setSubmitting(false);
+    try {
+      await sendEmail({
+        name: data.name,
+        email: data.email,
+        note: data.note,
+        phone: data.phone,
+        countryCode,
+        countryName,
+        emailTo: process.env.GATSBY_RECEIVER_EMAILS ?? '',
+      });
+    } catch (_) {
+      alert('Something went wrong, please try again later...');
+    } finally {
+      setSubmitting(false);
+    }
 
     setTimeout(() => {
       window.location.reload();
@@ -148,12 +161,12 @@ const ContactForm: React.FC = () => {
       email={email}
       note={note}
       phone={phone}
-      disabled={submitting}
+      submitting={submitting}
       onNameChange={(e) => { setName(e.target.value); }}
       onEmailChange={(e) => { setEmail(e.target.value); }}
       onNoteChange={(e) => { setNote(e.target.value); }}
       onPhoneChange={setPhone}
-      onSubmit={(data) => { void sendEmail(data); }}
+      onSubmit={(data) => { void onSubmitHandler(data); }}
     />
   );
 };

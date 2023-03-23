@@ -1,5 +1,11 @@
 import type { GatsbyConfig } from 'gatsby';
 
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+require('dotenv').config({
+  // eslint-disable-next-line @typescript-eslint/restrict-template-expressions
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'Adornup',

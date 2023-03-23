@@ -65,4 +65,9 @@ export type {
   CountryData,
 };
 
+// eslint-disable-next-line @typescript-eslint/ban-types
+export const isCountryData = (val: CountryData | {}): val is CountryData => {
+  return Object.keys(val).length > 0;
+};
+
 export default PhoneInput;
