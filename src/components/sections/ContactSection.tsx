@@ -1,7 +1,9 @@
 import { StaticImage } from 'gatsby-plugin-image';
 import * as React from 'react';
 
-import ContactForm from '../ContactForm';
+import ClientSideOnly from '../ClientSideOnly';
+
+const ContactForm = React.lazy(async () => await import('../ContactForm'));
 
 interface ServiceItemProps {
   title: string
@@ -83,7 +85,11 @@ const ContactSection = React.forwardRef<HTMLElement, ContactSectionProps>(functi
       </div>
 
       <div className='lg:flex-1 flex flex-col justify-start lg:justify-end'>
-        <ContactForm />
+        <ClientSideOnly>
+          <React.Suspense fallback={<div />}>
+            <ContactForm />
+          </React.Suspense>
+        </ClientSideOnly>
       </div>
     </section>
   );
