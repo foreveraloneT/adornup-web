@@ -1,7 +1,8 @@
 import * as React from 'react';
 import classNames from 'classnames';
 
-import LogoGraphic from '../graphics/logo.graphic.svg';
+import logoPrimary from '../images/logo-primary.png';
+import logoSecondary from '../images/logo-secondary.png';
 
 interface LogoProps {
   className?: string
@@ -9,20 +10,21 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = '', variant = 'primary' }) => (
-  <div className={classNames('flex items-center gap-x-2 select-none', className)}>
-    <LogoGraphic
-      className="w-6 h-6 lg:w-15 lg:h-15"
+  <div className={ classNames('w-[150px] lg:w-[190px]', className)}>
+  {
+  variant === 'primary'
+    ? (
+    <img
+      src={logoPrimary}
+      alt="logo"
     />
-    <div
-      className={classNames(
-        'text-lg lg:text-4xl font-bold font-quattrocento uppercase text-black',
-        {
-          'text-white': variant === 'secondary',
-        },
-      )}
-    >
-      Adornup
-    </div>
+      )
+    : (
+    <img
+      src={logoSecondary}
+      alt="logo"
+    />)
+  }
   </div>
 );
 
