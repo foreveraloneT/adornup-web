@@ -10,17 +10,19 @@ interface LogoProps {
 }
 
 const Logo: React.FC<LogoProps> = ({ className = '', variant = 'primary' }) => (
-  <div className={ classNames('w-[150px] lg:w-[190px]', className)}>
+  <div className={ classNames('w-[150px] lg:w-[190px] select-none', className)}>
   {
   variant === 'primary'
     ? (
     <img
+      className='pointer-events-none'
       src={logoPrimary}
       alt="logo"
     />
       )
     : (
     <img
+      className='pointer-events-none'
       src={logoSecondary}
       alt="logo"
     />)
