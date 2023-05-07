@@ -2,12 +2,12 @@ import * as React from 'react';
 import ImageSliderShow from '../ImageSlideShow';
 
 const TeamSection: React.FC = () => (
-  <section className='w-full py-8 lg:py-20 px-4 md:px-0 bg-grey-bg flex flex-col md:flex-row gap-4 md:justify-between'>
+  <section className='w-full py-8 lg:py-20 px-4 md:pl-0 lg:pr-[112px] bg-grey-bg flex flex-col md:flex-row gap-4 md:justify-between lg:justify-start lg:gap-[154px]'>
     <div className="md:w-1/2 lg:w-2/5 md:flex md:flex-col md:justify-center">
       <ImageSliderShow />
     </div>
 
-    <div className="block md:mr-4 lg:mr-[112px] md:w-1/2 lg:w-2/5 md:flex md:flex-col md:justify-center">
+    <div className="lg:flex-1 md:w-1/2 md:flex md:flex-col md:justify-center">
       <h2 className="uppercase font-medium text-2.5xl text-white">Our team</h2>
 
       <div className="my-4 lg:mb-10 h-px w-15 lg:w-[120px] bg-gold"/>
