@@ -51,7 +51,7 @@ const ServiceList: React.FC = () => (
 
     <ServiceItem
       title="Follow up our team"
-      detail="Stay in touch with our team or keep up with our team's progress.."
+      detail="Stay in touch with our team or keep up with our team's progress."
     >
       <StaticImage
         src="../../images/services/follow-up.png"

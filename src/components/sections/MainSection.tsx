@@ -49,7 +49,7 @@ const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContact
         lineHeight: '1.1',
       }}
     >
-      Transforming your vision into exquisite jewelry creations
+      Transforming your vision into exquisite jewellery creations
     </p>
     <div className="bg-gold w-15 lg:w-[120px] h-px my-6" />
     <p className='md:w-3/5 lg:max-w-[632px] font-quattrocento font-normal text-grey-text1 text-base lg:text-lg'>
