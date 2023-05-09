@@ -11,11 +11,12 @@ interface PureContactsProps {
   email: string
   tel: string
   whatsapp: string
+  whatsappLink: string
   className?: string
   variant?: 'primary' | 'secondary'
 }
 
-const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, className = '', variant = 'primary' }) => (
+const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, whatsappLink, className = '', variant = 'primary' }) => (
   <div
     className={classNames(
       'flex flex-col lg:flex-row gap-6 text-grey-icon font-sans font-medium text-base lg:text-lg',
@@ -31,7 +32,7 @@ const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, class
       </div>
     </a>
 
-    <a href={`tel:${whatsapp}`}>
+    <a href={whatsappLink}>
       <div className="flex gap-2 justify-center">
         <WhatappsIcon />
         <div>{formatPhoneNumber(whatsapp)}</div>
@@ -50,13 +51,14 @@ const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, class
 type ContactProps = Pick<PureContactsProps, 'className' | 'variant'>;
 
 const Contacts: React.FC<ContactProps> = (props) => {
-  const { site: { siteMetadata: { email, tel, whatsapp } } } = useStaticQuery(graphql`
+  const { site: { siteMetadata: { email, tel, whatsapp, whatsappLink } } } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           email
           tel
           whatsapp
+          whatsappLink
         }
       }
     }
@@ -67,6 +69,7 @@ const Contacts: React.FC<ContactProps> = (props) => {
       email={email}
       tel={tel}
       whatsapp={whatsapp}
+      whatsappLink={whatsappLink}
       {...props}
     />
   );

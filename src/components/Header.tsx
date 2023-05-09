@@ -14,7 +14,7 @@ import { useWindowScroll } from '../hooks/scroll';
 interface PureHeaderProps {
   email: string
   tel: string
-  whatsapp: string
+  whatsappLink: string
   showMobileMenu?: boolean
   hide?: boolean
   onOpenMobileMenu: () => void
@@ -24,7 +24,7 @@ interface PureHeaderProps {
 const PureHeader: React.FC<PureHeaderProps> = ({
   email,
   tel,
-  whatsapp,
+  whatsappLink,
   showMobileMenu = false,
   hide = false,
   onOpenMobileMenu,
@@ -46,7 +46,7 @@ const PureHeader: React.FC<PureHeaderProps> = ({
       </Link>
       <div className='hidden lg:flex lg:gap-4 text-grey-icon'>
         <a href={`mailto:${email}`}><EmailIcon className="cursor-pointer" /></a>
-        <a href={`tel:${whatsapp}`}><WhatappsIcon className="cursor-pointer" /></a>
+        <a href={whatsappLink}><WhatappsIcon className="cursor-pointer" /></a>
         <a href={`tel:${tel}`}><PhoneIcon className="cursor-pointer" /></a>
       </div>
       <div className='lg:hidden'>
@@ -74,13 +74,13 @@ const PureHeader: React.FC<PureHeaderProps> = ({
 );
 
 const Header: React.FC = () => {
-  const { site: { siteMetadata: { email, tel, whatsapp } } } = useStaticQuery(graphql`
+  const { site: { siteMetadata: { email, tel, whatsappLink } } } = useStaticQuery(graphql`
     query {
       site {
         siteMetadata {
           email
           tel
-          whatsapp
+          whatsappLink
         }
       }
     }
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
     <PureHeader
       email={email}
       tel={tel}
-      whatsapp={whatsapp}
+      whatsappLink={whatsappLink}
       showMobileMenu={showMobileMenu}
       hide={hide}
       onOpenMobileMenu={() => { setShowMobileMenu(true); }}
