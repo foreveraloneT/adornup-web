@@ -33,7 +33,7 @@ const InfoSection = React.forwardRef<HTMLElement>(function InfoSection (_, ref) 
       <InfoCard
         Graphic={Info2Graphic}
         title="High-quality production"
-        content="Our production department in Thailand where is renown for manufacturing high-quality jewellery can create variety of jewellery for every customer"
+        content="Our production department in Thailand where is renown for manufacturing high-quality jewellery can create variety of jewellery for every customer."
       />
       <InfoCard
         Graphic={Info3Graphic}
