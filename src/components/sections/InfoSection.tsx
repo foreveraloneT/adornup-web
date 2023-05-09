@@ -33,12 +33,12 @@ const InfoSection = React.forwardRef<HTMLElement>(function InfoSection (_, ref) 
       <InfoCard
         Graphic={Info2Graphic}
         title="High-quality production"
-        content="Our production department in Thailand where is renown for manufacturing high-quality jewellery can manufacture both large and small quantity to supply both big and small businesses."
+        content="Our production department in Thailand where is renown for manufacturing high-quality jewellery can create variety of jewellery for every customer"
       />
       <InfoCard
         Graphic={Info3Graphic}
         title="Welcome all business scale"
-        content="If you are a jewellery designer who is looking for the way to make physical samples or perhaps a designer who cannot keep up with increasing demands. Our production can manufacture both large and small quantity to supply both big and small businesses."
+        content="If you are a jewellery designer who is looking for the way to make physical samples or perhaps a designer who cannot keep up with increasing demands. Our production can manufacture both large and small quantities to supply both big and small businesses."
       />
     </section>
   );
