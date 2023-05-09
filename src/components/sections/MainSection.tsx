@@ -53,7 +53,7 @@ const MainSection: React.FC<MainSectionProps> = ({ onClickScroll, onClickContact
     </p>
     <div className="bg-gold w-15 lg:w-[120px] h-px my-6" />
     <p className='md:w-3/5 lg:max-w-[632px] font-quattrocento font-normal text-grey-text1 text-base lg:text-lg'>
-      ADORNUP offers end-to-end services for all types of jewellery businesses especially for startups. This starts from CAD designing to finished products. We specialises in helping small customers who prefer to start with small quantity orders or have unique designs that require special craftsmanship. We provide full support and professional service to assist our client to fulfil their inventory.
+      ADORNUP offers end-to-end services for all types of jewellery businesses especially for startups. This starts from CAD designing to finished products. We specialises in helping small customers who prefer to start with small quantity orders or have unique designs that require special craftsmanship. We provide full support and professional services to assist our clients to fulfill their inventories.
     </p>
     <Button
       className='uppercase mt-4 lg:mt-8 lg:w-[270px] shadow-normal'

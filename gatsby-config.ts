@@ -9,7 +9,7 @@ require('dotenv').config({
 const config: GatsbyConfig = {
   siteMetadata: {
     title: 'ADORNUP | Transforming your vision into exquisite jewellery creations',
-    description: 'ADORNUP offers end-to-end services for all types of jewellery businesses especially for startups. This starts from CAD designing to finished products. We specialises in helping small customers who prefer to start with small quantity orders or have unique designs that require special craftsmanship. We provide full support and professional service to assist our client to fulfil their inventory.',
+    description: 'ADORNUP offers end-to-end services for all types of jewellery businesses especially for startups. This starts from CAD designing to finished products. We specialises in helping small customers who prefer to start with small quantity orders or have unique designs that require special craftsmanship. We provide full support and professional services to assist our clients to fulfill their inventories.',
     siteUrl: 'https://www.adornup.co',
     email: 'info@adornup.co',
     tel: '+6620129514',
