@@ -32,10 +32,10 @@ const PureContacts: React.FC<PureContactsProps> = ({ email, tel, whatsapp, whats
       </div>
     </a>
 
-    <a href={whatsappLink}>
+    <a href={whatsappLink} target="_blank" rel="noreferrer">
       <div className="flex gap-2 justify-center">
         <WhatappsIcon />
-        <div>{formatPhoneNumber(whatsapp)}</div>
+        <div>{whatsapp}</div>
       </div>
     </a>
 

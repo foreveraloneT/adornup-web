@@ -46,7 +46,7 @@ const PureHeader: React.FC<PureHeaderProps> = ({
       </Link>
       <div className='hidden lg:flex lg:gap-4 text-grey-icon'>
         <a href={`mailto:${email}`}><EmailIcon className="cursor-pointer" /></a>
-        <a href={whatsappLink}><WhatappsIcon className="cursor-pointer" /></a>
+        <a href={whatsappLink} target="_blank" rel="noreferrer"><WhatappsIcon className="cursor-pointer" /></a>
         <a href={`tel:${tel}`}><PhoneIcon className="cursor-pointer" /></a>
       </div>
       <div className='lg:hidden'>
