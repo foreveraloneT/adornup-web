@@ -14,7 +14,7 @@ const config: GatsbyConfig = {
     email: 'info@adornup.co',
     tel: '+6620129514',
     whatsapp: '+6611787452',
-    whatsappLink: 'https://wa.me/6611787452',
+    whatsappLink: 'https://wa.me/message/D5LKAZBMD2QOI1',
     address: '1233 Charoen Krung Road, Suriyawong, Bang Rak, Bangkok 10500',
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
